@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insforge Real-Time Chat</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; }
+    #chat-container { max-width: 500px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 24px; }
+    #messages { height: 300px; overflow-y: auto; border: 1px solid #eee; border-radius: 4px; padding: 12px; margin-bottom: 16px; background: #fafafa; }
+    .msg { margin-bottom: 12px; }
+    .msg-user { font-weight: bold; color: #2a7ae2; }
+    .msg-content { margin-left: 8px; }
+    #input-row { display: flex; gap: 8px; }
+    #message-input { flex: 1; padding: 8px; border-radius: 4px; border: 1px solid #ccc; }
+    #send-btn { padding: 8px 16px; border-radius: 4px; border: none; background: #2a7ae2; color: #fff; cursor: pointer; }
+    #send-btn:disabled { background: #aaa; }
+    #login-form { margin-bottom: 16px; }
+    #nickname { margin-left: 8px; }
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <form id="login-form">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="text" id="nickname" placeholder="Nickname (optional)">
+      <button type="submit">Login / Register</button>
+    </form>
+    <div id="user-info" style="display:none; margin-bottom:16px;"></div>
+    <div id="messages"></div>
+    <div id="input-row">
+      <input type="text" id="message-input" placeholder="Type a message..." disabled>
+      <button id="send-btn" disabled>Send</button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@insforge/sdk/dist/insforge-sdk.umd.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
